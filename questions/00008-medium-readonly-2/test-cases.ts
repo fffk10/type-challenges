@@ -1,10 +1,12 @@
 import type { Alike, Expect } from '@type-challenges/utils'
+import type { MyReadonly2 } from './template'
 
+// eslint-disable-next-line @typescript-eslint/comma-dangle
 type cases = [
   Expect<Alike<MyReadonly2<Todo1>, Readonly<Todo1>>>,
   Expect<Alike<MyReadonly2<Todo1, 'title' | 'description'>, Expected>>,
   Expect<Alike<MyReadonly2<Todo2, 'title' | 'description'>, Expected>>,
-  Expect<Alike<MyReadonly2<Todo2, 'description' >, Expected>>,
+  Expect<Alike<MyReadonly2<Todo2, 'description'>, Expected>>
 ]
 
 // @ts-expect-error
